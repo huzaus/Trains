@@ -1,6 +1,4 @@
-# Project exclude paths
-/app/target/
-/domain/target/
-/project/project/target/
-/project/target/
-/target/
+.idea
+target/
+*.iml
+.bsp
