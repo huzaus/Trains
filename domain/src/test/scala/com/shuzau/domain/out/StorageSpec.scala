@@ -2,15 +2,13 @@ package com.shuzau.domain.out
 
 import com.shuzau.domain.entity.EntityGen
 import com.shuzau.domain.out.Storage.StorageService
-import com.softwaremill.diffx.scalatest.DiffMatcher
-import org.scalacheck.Gen
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 import zio.Runtime.default
 import zio.{ZEnv, ZIO}
 
-class StorageSpec extends AnyFlatSpec with Matchers with ScalaCheckPropertyChecks with DiffMatcher {
+class StorageSpec extends AnyFlatSpec with Matchers with ScalaCheckPropertyChecks {
 
   behavior of "Storage"
 
@@ -57,7 +55,7 @@ class StorageSpec extends AnyFlatSpec with Matchers with ScalaCheckPropertyCheck
   }
 
   it should "return save and get trains" in {
-    forAll(Gen.listOf(EntityGen.train)) { trains =>
+    forAll(EntityGen.trains) { trains =>
       val scenario = for {
         _      <- ZIO.foreach_(trains)(Storage.save)
         result <- Storage.trains()
@@ -67,7 +65,7 @@ class StorageSpec extends AnyFlatSpec with Matchers with ScalaCheckPropertyCheck
   }
 
   it should "return save and get stations" in {
-    forAll(Gen.listOf(EntityGen.station)) { stations =>
+    forAll(EntityGen.stations) { stations =>
       val scenario = for {
         _      <- ZIO.foreach_(stations)(Storage.save)
         result <- Storage.stations()
@@ -77,7 +75,7 @@ class StorageSpec extends AnyFlatSpec with Matchers with ScalaCheckPropertyCheck
   }
 
   it should "return save and get trips" in {
-    forAll(Gen.listOf(EntityGen.trip)) { trips =>
+    forAll(EntityGen.trips) { trips =>
       val scenario = for {
         _      <- ZIO.foreach_(trips)(Storage.save)
         result <- Storage.trips()
