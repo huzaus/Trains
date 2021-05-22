@@ -46,5 +46,5 @@ object EntityGen {
   val trips: Gen[List[Trip]] = trips(trip)
 
   def trips(trip: Gen[Trip]): Gen[List[Trip]] =
-    Gen.listOf(trip)
+    Gen.nonEmptyListOf(trip)
 }
