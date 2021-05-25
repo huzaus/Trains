@@ -1,11 +1,11 @@
-package com.shuzau.domain.in
+package com.shuzau.trains.domain.in
 
 import cats.syntax.either._
 import cats.syntax.foldable._
 import cats.syntax.traverse._
-import com.shuzau.domain.entity.{Report, Station, Train, Trip}
-import com.shuzau.domain.out.Storage
-import com.shuzau.domain.out.Storage.{StationStorage, TrainStorage, TripStorage}
+import com.shuzau.trains.domain.entity.{Report, Station, Train, Trip}
+import com.shuzau.trains.domain.out.Storage.{StationStorage, TrainStorage, TripStorage}
+import com.shuzau.trains.domain.out.Storage
 import zio.{Has, IO, UIO, ULayer, ZIO, ZLayer}
 
 object TrainsModule {

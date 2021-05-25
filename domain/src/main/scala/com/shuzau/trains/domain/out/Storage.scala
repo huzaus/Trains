@@ -1,6 +1,6 @@
-package com.shuzau.domain.out
+package com.shuzau.trains.domain.out
 
-import com.shuzau.domain.entity.{Station, Train, Trip}
+import com.shuzau.trains.domain.entity.{Station, Train, Trip}
 import zio.{Has, Ref, UIO, ULayer, ZIO, ZLayer}
 
 object Storage {

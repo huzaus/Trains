@@ -1,7 +1,7 @@
-package com.shuzau.domain.out
+package com.shuzau.trains.domain.out
 
-import com.shuzau.domain.entity.EntityGen
-import com.shuzau.domain.out.Storage.StorageService
+import Storage.StorageService
+import com.shuzau.trains.domain.entity.EntityGen
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks

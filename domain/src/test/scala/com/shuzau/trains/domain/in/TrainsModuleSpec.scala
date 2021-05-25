@@ -1,7 +1,7 @@
-package com.shuzau.domain.in
+package com.shuzau.trains.domain.in
 
-import com.shuzau.domain.entity.EntityGen
-import com.shuzau.domain.in.TrainsModule.TrainsService
+import TrainsModule.TrainsService
+import com.shuzau.trains.domain.entity.EntityGen
 import org.scalacheck.{Gen, Shrink}
 import org.scalatest.EitherValues
 import org.scalatest.flatspec.AnyFlatSpec

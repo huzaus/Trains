@@ -1,4 +1,4 @@
-package com.shuzau.domain.entity
+package com.shuzau.trains.domain.entity
 
 import cats.syntax.option._
 
