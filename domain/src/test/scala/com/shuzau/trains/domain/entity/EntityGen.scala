@@ -41,7 +41,7 @@ object EntityGen {
     id       <- Gen.identifier
     train    <- train
     stations <- stations
-  } yield Trip(version, id, train.id, stations.map(_.id))
+  } yield Trip(version, id, train.id, Stations(stations.map(_.id)))
 
   val trips: Gen[List[Trip]] = trips(trip)
 

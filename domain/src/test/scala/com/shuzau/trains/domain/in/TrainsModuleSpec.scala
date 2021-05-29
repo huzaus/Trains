@@ -40,7 +40,7 @@ class TrainsModuleSpec extends AnyFlatSpec with Matchers with ScalaCheckProperty
         report <- TrainsModule.report()
       } yield report
       val report   = unsafeRun(scenario)
-      report.map.keys.map(_.id) should contain theSameElementsAs trips.flatMap(_.stations).toSet
+      report.map.keys.map(_.id) should contain theSameElementsAs trips.flatMap(_.stations.station).toSet
       report.map.values.flatten.map(_.id).toSet should contain theSameElementsAs trips.map(_.train).toSet
       report.sorted().values.map(_.map(_.seats).sum) shouldBe
         report.map.values.map(_.map(_.seats).sum).toList.sortWith(_ > _)

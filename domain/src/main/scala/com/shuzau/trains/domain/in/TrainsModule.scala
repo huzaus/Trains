@@ -53,7 +53,7 @@ object TrainsModule {
             def process(report: Report, trip: Trip): Report = {
               val train: Option[Train] = trains.find(trainPredicate(trip))
               train.fold(report) { train =>
-                trip.stations
+                trip.stations.station
                   .flatMap(id => stations.find(stationPredicate(id, trip.version)))
                   .foldLeft(report) { case (report, station) =>
                     report.visit(station, train)
@@ -85,7 +85,7 @@ object TrainsModule {
                 s"Unknown train id='${trip.train}' version='${trip.version}'"
               )
               .toValidatedNec,
-            trip.stations.traverse(id =>
+            trip.stations.station.traverse(id =>
               Either
                 .cond(
                   stations.exists(stationPredicate(id, trip.version)),
