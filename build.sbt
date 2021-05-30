@@ -6,8 +6,6 @@ ThisBuild / organization := "com.shuzau.trains"
 ThisBuild / organizationName := "Siarhei Huzau"
 
 lazy val `trains` = (project in file("."))
-  .settings(Compile / discoveredMainClasses ++= (`app` / Compile / discoveredMainClasses).value)
-  .dependsOn(`app` % "compile->compile;test->test")
   .aggregate(`domain`, `app`)
 
 lazy val `domain` = project in file("domain")
