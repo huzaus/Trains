@@ -10,7 +10,7 @@ class TripsDecoderSpec extends AnyFlatSpec with Matchers with EitherValues {
   behavior of "TripsDecoder"
 
   it should "decode all trips files" in {
-    val result = loadTrips("src/main/resources")
+    val result = loadTrips("app/src/main/resources")
     result.filter(_.isLeft) shouldBe empty
     result.filter(_.isRight) should have size 10
   }

@@ -10,7 +10,7 @@ class StationsDecoderSpec extends AnyFlatSpec with Matchers with EitherValues {
   behavior of "StationsDecoder"
 
   it should "decode all stations files" in {
-    val result = loadStations("src/main/resources")
+    val result = loadStations("app/src/main/resources")
     result.filter(_.isLeft) should have size 1
     result.filter(_.isRight) should have size 9
   }
